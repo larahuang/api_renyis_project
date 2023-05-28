@@ -2,13 +2,16 @@ var createError = require('http-errors');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var express = require('express');
+var cors = require('cors')
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger.json') 
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const swaggerUi = require('swagger-ui-express')
-const swaggerFile = require('./swagger.json') 
+
 
 var app = express();
+app.use(cors())
 app.all('/*',(req,res,next)=>{
     res.header('Access-Control-Allow-Origin','*');
   //  res.header('Access-COntrol-Allow-Headers','X-Requested-With');

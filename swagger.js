@@ -4,14 +4,13 @@ const doc = {
     info: {
         "version": "1.0.0", 
         "title": "Node MySQl Resful Api",   
-        description: "swagger autogen自動生成的Api文檔"
+        description: "larahuang 2023/5"
     },
-   
-    host: "localhost:3000",
+    host: "api-renyis-project.vercel.app",//
     basePath: "/",
     //localhost端時為schemes＝>http
     //遠端端時為schemes＝>https
-    schemes: ['http'],
+    schemes: ['https'],
     consumes: ['application/json'],
     produces: ['application/json'],
     //安全定義
