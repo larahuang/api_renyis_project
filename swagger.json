@@ -49,7 +49,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/AddItem"
+              "$ref": "#/definitions/AddProduct"
             }
           }
         ],
@@ -70,15 +70,12 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "constructor": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/AddProduct"
             }
           }
         ],
@@ -176,24 +173,24 @@
     }
   },
   "definitions": {
-    "AddItem": {
+    "AddProduct": {
       "type": "object",
       "properties": {
-        "item_name": {
+        "product_name": {
           "type": "string",
           "example": "Apple"
         },
-        "item_desc": {
+        "product_desc": {
           "type": "string",
           "example": "Apple is good fruit"
         },
-        "item_price": {
+        "product_price": {
           "type": "number",
           "example": 120
         }
       },
       "required": [
-        "item_desc"
+        "product_desc"
       ]
     }
   }

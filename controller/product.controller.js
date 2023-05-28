@@ -25,7 +25,7 @@ exports.create = (req, res) =>
             in: 'body',
             description: '',
             required: true,
-            schema: { $ref: "#/definitions/AddItem" }
+            schema: { $ref: "#/definitions/AddProduct" }
     } */
 	const newProduct = new Product(req.body);
 	if(req.body.constructor === Object && Object.keys(req.body).length === 0){
@@ -51,6 +51,12 @@ exports.update = (req, res) =>
 	/*
         #swagger.summary='編輯單一項目',
         #swagger.description = '' */
+	/*	#swagger.parameters['obj'] = {
+            in: 'body',
+            description: '',
+            required: true,
+            schema: { $ref: "#/definitions/AddProduct" }
+    } */
 	const product = new Product(req.body);
 	if(req.body.constructor === Object && Object.keys(req.body).length === 0) {
 		return res.status(400).send('缺少一個或多個必填字段');

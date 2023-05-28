@@ -27,10 +27,10 @@ const doc = {
     },
     //定義
     definitions: {
-       AddItem:{
-            item_name: "Apple",
-            $item_desc: "Apple is good fruit",
-            item_price:120,  
+       AddProduct:{
+            product_name: "Apple",
+            $product_desc: "Apple is good fruit",
+            product_price:120,  
         },
     }
 }
