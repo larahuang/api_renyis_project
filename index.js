@@ -9,12 +9,18 @@ const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger.json') 
 
 var app = express();
+app.all('/*',(req,res,next)=>{
+    res.header('Access-Control-Allow-Origin','*');
+  //  res.header('Access-COntrol-Allow-Headers','X-Requested-With');
+    next();
+});
 var options = {
    customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css',
-  customCss: '.swagger-ui .opblock-tag.no-desc span{font-size: 16px;} .swagger-ui .opblock-body pre.microlight .headerline:nth-child(6){display:none},.swagger-ui .opblock-body pre.microlight .headerline:nth-child(8){display:none},.swagger-ui .scheme-container .schemes>label select{padding: 8px;},.swagger-ui .body-param-options label select{padding: 8px}'
+  customCss: '.swagger-ui .opblock-tag.no-desc span{font-size: 16px;} .swagger-ui .opblock-body pre.microlight .headerline:nth-child(6){display:none},.swagger-ui .opblock-body pre.microlight .headerline:nth-child(3){display:none},.swagger-ui .opblock-body pre.microlight .headerline:nth-child(8){display:none},.swagger-ui .scheme-container .schemes>label select{padding: 8px;},.swagger-ui .body-param-options label select{padding: 8px}'
 };
 //swagger 路徑
-app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile,options))
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile, options))
+
 // to support JSON-encoded bodies
 app.use(bodyParser.json())
 // view engine setup
